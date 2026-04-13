@@ -35,79 +35,58 @@
       margin: 0 auto;
       padding: 0;
     }
-    .main-table {
+    .main-table, .inner-table {
       width: 100%;
       border: 0;
       border-spacing: 0;
       border-collapse: separate;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
-    .inner-table {
-      width: 100%;
-      border: 0;
-      border-spacing: 0;
-      border-collapse: separate;
-      margin-left: auto;
-      margin-right: auto;
-    }
+
+    /* ✅ 修复重点 */
     .pub-table {
       width: 100%;
       border: 0;
       border-spacing: 0 10px;
       border-collapse: separate;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
+      padding: 0 20px;   /* ✅ 关键：加缩进 */
     }
+
     .name {
       padding-top: 20px;
       margin: 0;
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
       font-size: 32px;
       text-align: center;
     }
     h2 {
       margin: 0;
       font-weight: normal;
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
       font-size: 22px;
     }
     .papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
       font-size: 14px;
       font-weight: 700;
     }
     .profile-img {
       width: 100%;
-      max-width: 100%;
       border-radius: 100%;
-      object-fit: cover;
       display: block;
     }
     .paper-text {
-      padding: 16px 20px 16px 20px;
-      vertical-align: top;
+      padding: 16px 0;
       line-height: 1.45;
     }
     .top-left {
       padding: 2.5%;
       width: 63%;
-      vertical-align: middle;
     }
     .top-right {
       padding: 2.5%;
       width: 37%;
-      max-width: 37%;
-      vertical-align: middle;
-    }
-    .top-right-inner {
-      width: 100%;
-      max-width: 100%;
     }
     .section-row {
       padding: 16px 20px 10px 20px;
-      width: 100%;
-      vertical-align: middle;
     }
     .small-note {
       color: #666;
@@ -115,15 +94,13 @@
     .pub-row:hover {
       background-color: #fffff7;
     }
+
     @media (max-width: 640px) {
       .main-table, .inner-table, .pub-table, tbody, tr, td {
         display: block;
         width: 100% !important;
-        max-width: 100% !important;
       }
       .top-left, .top-right, .paper-text {
-        display: block;
-        width: 100% !important;
         padding: 12px 20px !important;
       }
       .profile-img {
@@ -136,132 +113,89 @@
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <table class="main-table">
-      <tbody>
-        <tr>
-          <td style="padding:0">
-            <table class="inner-table">
-              <tbody>
-                <tr>
-                  <td class="top-left">
-                    <p class="name">Benwang Chen</p>
-                    <p>
-                      I am an incoming PhD student at <a href="https://www.kaist.ac.kr/en/" target="_blank" rel="noopener noreferrer">KAIST</a>
-                      (Korea Advanced Institute of Science and Technology), starting in 2026.
-                    </p>
-                    <p>
-                      I received my Master's degree from <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener noreferrer">Tsinghua University</a>.
-                    </p>
-                    <p>
-                      My research interests lie in computer vision, machine learning, and multimodal intelligence,
-                      with a focus on building high-fidelity and efficient AI systems.
-                    </p>
-                    <p style="text-align:center">
-                      <a href="mailto:paper595236@163.com">Email</a> &nbsp;/&nbsp;
-                      <a href="https://github.com/c9854" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    </p>
-                  </td>
-                  <td class="top-right">
-                    <table class="top-right-inner">
-                      <tbody>
-                        <tr>
-                          <td>
-                            <img alt="profile photo" src="images/profile.jpg" class="profile-img">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+<div class="container">
+<table class="main-table">
+<tbody>
+<tr>
+<td>
 
-            <table class="inner-table">
-              <tbody>
-                <tr>
-                  <td class="section-row">
-                    <h2>Research Interests</h2>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding:0 20px 20px 20px">
-                    <p>
-                      I am broadly interested in computer vision, deep learning, and multimodal learning.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+<!-- Header -->
+<table class="inner-table">
+<tr>
+<td class="top-left">
+  <p class="name">Benwang Chen</p>
+  <p>I am an incoming PhD student at <a href="https://www.kaist.ac.kr/en/">KAIST</a>, starting in 2026.</p>
+  <p>I received my Master's degree from <a href="https://www.tsinghua.edu.cn/en/">Tsinghua University</a>.</p>
+  <p>My research interests lie in computer vision, machine learning, and multimodal intelligence.</p>
+  <p style="text-align:center">
+    <a href="mailto:paper595236@163.com">Email</a> /
+    <a href="https://github.com/c9854">GitHub</a>
+  </p>
+</td>
+<td class="top-right">
+  <img src="images/profile.jpg" class="profile-img">
+</td>
+</tr>
+</table>
 
-            <table class="inner-table">
-              <tbody>
-                <tr>
-                  <td class="section-row">
-                    <h2>Education</h2>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding:0 20px 20px 20px">
-                    <p>
-                      <strong>Korea Advanced Institute of Science and Technology (KAIST)</strong><br>
-                      Ph.D. in Computer Science (Incoming, 2026)
-                    </p>
-                    <p>
-                      <strong>Tsinghua University</strong><br>
-                      M.S. in Computer Science
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+<!-- Research -->
+<table class="inner-table">
+<tr><td class="section-row"><h2>Research Interests</h2></td></tr>
+<tr><td style="padding:0 20px 20px 20px">
+  <p>Computer vision, deep learning, and multimodal learning.</p>
+</td></tr>
+</table>
 
-            <table class="inner-table">
-              <tbody>
-                <tr>
-                  <td class="section-row">
-                    <h2>Publications</h2>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            
-            <table class="pub-table">
-              <tbody>
-                <tr class="pub-row">
-                  <td class="paper-text">
-                    <a href="https://arxiv.org/abs/2312.03029" target="_blank" rel="noopener noreferrer">
-                      <span class="papertitle">Gaussian Head Avatar: Ultra High-fidelity Head Avatar via Dynamic Gaussians</span>
-                    </a>
-                    <br>
-                    Yuelang Xu, Benwang Chen, Zhe Li, Hongwen Zhang, Lizhen Wang, Zerong Zheng, Yebin Liu
-                    <br>
-                    IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2024
-                    <br>
-                    <a href="https://arxiv.org/abs/2312.03029" target="_blank" rel="noopener noreferrer">paper</a> &nbsp;/&nbsp;
-                    <a href="https://yuelangx.github.io/gaussianheadavatar/" target="_blank" rel="noopener noreferrer">project page</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+<!-- Education -->
+<table class="inner-table">
+<tr><td class="section-row"><h2>Education</h2></td></tr>
+<tr><td style="padding:0 20px 20px 20px">
+  <p><strong>KAIST</strong><br>Ph.D. (Incoming, 2026)</p>
+  <p><strong>Tsinghua University</strong><br>M.S.</p>
+</td></tr>
+</table>
 
-            <table class="inner-table">
-              <tbody>
-                <tr>
-                  <td style="padding:0 20px 28px 20px; text-align:center;">
-                    <p class="small-note" style="margin:0;">
-                      Website template adapted from
-                      <a href="https://github.com/jonbarron/jonbarron.github.io" target="_blank" rel="noopener noreferrer">Jon Barron's academic website</a>.
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<!-- Publications -->
+<table class="inner-table">
+<tr><td class="section-row"><h2>Publications</h2></td></tr>
+</table>
+
+<table class="pub-table">
+<tr class="pub-row">
+<td class="paper-text">
+  <a href="https://arxiv.org/abs/2312.03029">
+    <span class="papertitle">
+      Gaussian Head Avatar: Ultra High-fidelity Head Avatar via Dynamic Gaussians
+    </span>
+  </a>
+  <br>
+  Yuelang Xu, <strong>Benwang Chen</strong>, ...
+  <br>
+  CVPR 2024
+  <br>
+  <a href="#">paper</a> / <a href="#">project</a>
+</td>
+</tr>
+</table>
+
+<!-- Footer -->
+<table class="inner-table">
+<tr>
+<td style="padding:0 20px 28px 20px; text-align:center;">
+  <p class="small-note">
+    Template adapted from
+    <a href="https://github.com/jonbarron/jonbarron.github.io">Jon Barron</a>
+  </p>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
 </body>
 </html>
